@@ -1,7 +1,6 @@
-require_relative 'spec_helper'
+require_relative "spec_helper"
 
 describe Show do
-
   after(:each) do
     Show.destroy_all
   end
@@ -15,8 +14,8 @@ describe Show do
 
   describe "attributes" do
     it "has data attributes given to it from a migration file" do
-    #TODO: You'll need to create a new migration to add
-    #the necessary columns to the shows table
+      #TODO: You'll need to create a new migration to add
+      #the necessary columns to the shows table
       expect(@rick_and_morty.name).to eq("Rick and Morty")
       expect(@rick_and_morty.day).to eq("Thursday")
       expect(@rick_and_morty.network).to eq("Adult Swim")
@@ -30,7 +29,7 @@ describe Show do
 
     it "has a season column and attribute added from another migration file" do
       filepath = File.expand_path(File.dirname(File.dirname(__FILE__))) + "/db/migrate"
-      expect(Dir.entries(filepath)).to include("002_add_season_to_shows.rb")
+      expect(Dir.entries(filepath)).to include("20201016231616_add_season_to_shows.rb")
     end
   end
 
